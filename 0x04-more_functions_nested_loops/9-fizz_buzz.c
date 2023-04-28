@@ -10,27 +10,25 @@
 
 int main(void)
 {
-	int x
-	x = 1;
-	printf("%d", x);
+	int o;
 
-	for (x = 2; x <= 100; x++)
+	for (o = 1; o <= 100; o++)
 	{
-		if ((x % 3 == 0) && (x % 5 == 0))
-		{
-			printf(" FizzBuzz");
-		}
-		else if (x % 3 == 0)
+		if (o % 3 == 0 && o % 5 != 0)
 		{
 			printf(" Fizz");
-		}
-		else if (x % 5 == 0)
+		} else if (o % 5 == 0 && o % 3 != 0)
 		{
 			printf(" Buzz");
-		}
-		else
+		} else if (o % 3 == 0 && o % 5 == 0)
 		{
-			printf(" %d", x);
+			printf(" FizzBuzz");
+		} else if (o == 1)
+		{
+			printf("%d", o);
+		} else
+		{
+			printf(" %d", o);
 		}
 	}
 	printf("\n");
