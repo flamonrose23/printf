@@ -3,11 +3,10 @@
 /**
  * _strcat - function that concatenates two strings
  * @dest: input value
- * @src: input val
+ * @src: input value
  *
  * Return: void
  */
-
 char *_strcat(char *dest, char *src)
 {
 	int x;
