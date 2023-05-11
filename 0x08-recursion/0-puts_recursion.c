@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * _puts_recursion - function that prints a string
- * followed by mew line
+ * _puts_recursion - function like puts();
  * @s: input value
- * Return: always 0
+ * Return: always 0 (success)
  */
 
 void _puts_recursion(char *s)
