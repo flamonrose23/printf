@@ -1,48 +1,62 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
-*_printf - printing output according to a format
-*@format : char string
-*Return: number of char printed
-*/
-
-int _printf(const char *format, ...) 
+ * _printf - Custom implementation of printf
+ * @format: Format string
+ *
+ * Return: Number of characters printed
+ */
+int _printf(const char *format, ...)
 {
-	unsigned int x = 0, count = 0;
-	va_list t;
-	int (*f)(va_list);
+  va_list args;
+  int count = 0;
 
-	if (format == NULL)
-		return (-1);
-	va_start(va_list, format);
-	while (format[x])
+  va_start(args, format);
+
+  while (*format)
+    {
+      if (*format == '%')
 	{
-		for (; format[x] != '%' && format[x]; x++)
-		{
-			_putchar(format[x]);
-			count++;
-		}
+	  format++; /* Skip the '%' */
 
-		if (!format[x])
-			return (count);
-		f = check_for_specifiers(&format[x + 1])
-		if (f != NULL)
-		{
-			count += f(va_list);
-			x += 2;
-			continue;
-		}
-		if (!format[x + 1])
-			return (-1);
-
-		_putchar(format[x]);
+	  switch (*format)
+	    {
+	    case 'c':
+	      {
+		char c = (char)va_arg(args, int);
+		_putchar(c);
 		count++;
-		if (format[x + 1] == '%')
-			x += 2;
-		else
-			x++;
+		break;
+	      }
+	    case 's':
+	      {
+		char *str = va_arg(args, char *);
+		while (*str)
+		  {
+		   _putchar(*str);
+		    str++;
+		    count++;
+		  }
+		break;
+	      }
+	    case '%':
+	      {
+		_putchar('%');
+		count++;
+		break;
+	      }
+	    }
 	}
-	va_end(va_list);
-	return (count);
+      else
+	{
+	  _putchar(*format);
+	  count++;
+	}
+
+      format++;
+    }
+
+  va_end(args);
+
+  return (count);
 }
