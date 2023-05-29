@@ -33,6 +33,13 @@ break;
 case 'u':
 count += print_unsigned(va_arg(args, unsigned int));
 break;
+case 'o':
+count += print_unsigned_octal(va_arg(args, unsigned int));
+break;
+case 'x':
+case 'X':
+count += print_unsigned_hexadecimal(va_arg(args, unsigned int));
+break;
 case '%':
 count += print_char('%');
 break;
