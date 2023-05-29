@@ -30,6 +30,9 @@ case 'd':
 case 'i':
 count += print_integer(va_arg(args, int));
 break;
+case 'u':
+count += print_unsigned(va_arg(args, unsigned int));
+break;
 case '%':
 count += print_char('%');
 break;

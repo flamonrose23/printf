@@ -10,6 +10,7 @@ int _printf(const char *format, ...);
 int print_char(char c);
 int print_integer(int num);
 int print_string(char *str);
+int print_unsigned(unsigned int num);
 int _putchar(char c);
 
 #endif /* MAIN_H */
