@@ -36,8 +36,7 @@ while (format && format[i])
 {
 if (format[i] != '%')
 {
-_putchar(format[i]);
-count++;
+count += _putchar(format[i]);
 }
 else if (format[i + 1])
 {
@@ -46,8 +45,7 @@ i++;
 }
 else
 {
-_putchar(format[i]);
-count++;
+count += _putchar(format[i]);
 }
 i++;
 }
