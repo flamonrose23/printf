@@ -6,6 +6,7 @@
  *
  * Return: Number of characters printed
  */
+
 int _printf(const char *format, ...)
 {
   va_list args;
@@ -31,6 +32,13 @@ int _printf(const char *format, ...)
 	      {
 		char *str = va_arg(args, char *);
 		count += print_string(str);
+		break;
+	      }
+	    case 'd':
+	    case 'i':
+	      {
+		int num = va_arg(args, int);
+		count += print_integer(num);
 		break;
 	      }
 	    case '%':
