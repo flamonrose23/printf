@@ -10,16 +10,19 @@
 
 int print_unsigned_hexadecimal(unsigned int num)
 {
-int count = 0;
-unsigned int remainder;
+    int count = 0;
+    unsigned int quotient = num / 16;
+    int remainder = num % 16;
 
-if (num >= 16)
-count += print_unsigned_hexadecimal(num / 16);
-remainder = num % 16;
-if (remainder < 10)
-_putchar('0' + remainder);
-else
-_putchar('A' + remainder - 10);
-count++;
-return (count);
+    if (quotient != 0)
+        count += print_unsigned_hexadecimal(quotient);
+
+    if (remainder < 10)
+        putchar('0' + remainder);
+    else
+        putchar('a' + (remainder - 10));
+
+    count++;
+
+    return count;
 }
