@@ -29,34 +29,36 @@ int _printf(const char *format, ...)
  */
 int parse_format(const char *format, va_list args)
 {
-int count = 0;
-int i = 0;
+	int count = 0;
+	int i = 0;
 
-if (!format || (format[0] == '%' && !format[1]))
-{
-	return (-1);}
-if (format[0] == '%' && format[1] == ' ' && !format[2])
-{	
-	return (-1);}
+	if (!format || (format[0] == '%' && !format[1]))
+	{
+		return (-1);
+	}
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+	{	
+		return (-1);
+	}
 
-while (format && format[i])
-{
-if (format[i] != '%')
-{
-count += _putchar(format[i]);
-}
-else if (format[i + 1])
-{
-count += handle_conversion(format[i + 1], args);
-i++;
-}
-else
-{
-count += _putchar(format[i]);
-}
-i++;
-}
-return (count);
+	while (format && format[i])
+	{
+		if (format[i] != '%')
+		{
+			count += _putchar(format[i]);
+		}
+		else if (format[i + 1])
+		{
+			count += handle_conversion(format[i + 1], args);
+			i++;
+		}
+		else
+		{
+			count += _putchar(format[i]);
+		}
+		i++;
+	}
+	return (count);
 }
 
 /**
@@ -68,27 +70,27 @@ return (count);
  */
 int handle_conversion(char specifier, va_list args)
 {
-switch (specifier)
-{
-case 'c':
-return (print_char(va_arg(args, int)));
-case 's':
-return (print_string(va_arg(args, char *)));
-case '%':
-_putchar('%');
-return (1);
-case 'd':
-case 'i':
-return (print_integer(va_arg(args, int)));
-case 'u':
-return (print_unsigned(va_arg(args, unsigned int)));
-case 'o':
-return (print_unsigned_octal(va_arg(args, unsigned int)));
-case 'x':
-return (print_unsigned_hexadecimal(va_arg(args, unsigned int)));
-default:
-_putchar('%');
-_putchar(specifier);
-return (2);
-}
+	switch (specifier)
+	{
+		case 'c':
+			return (print_char(va_arg(args, int)));
+		case 's':
+			return (print_string(va_arg(args, char *)));
+		case '%':
+			_putchar('%');
+			return (1);
+		case 'd':
+		case 'i':
+			return (print_integer(va_arg(args, int)));
+		case 'u':
+			return (print_unsigned(va_arg(args, unsigned int)));
+		case 'o':
+			return (print_unsigned_octal(va_arg(args, unsigned int)));
+		case 'x':
+			return (print_unsigned_hexadecimal(va_arg(args, unsigned int)));
+		default:
+			_putchar('%');
+			_putchar(specifier);
+			return (2);
+	}
 }
