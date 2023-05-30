@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_integer - prints integers
+ * @num: number to be printed
+ *
+ * Return: number of integers printed
+ */
+
 int print_integer(int num)
 {
 int count = 0;

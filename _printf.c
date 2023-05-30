@@ -37,7 +37,7 @@ int parse_format(const char *format, va_list args)
 		return (-1);
 	}
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
-	{	
+	{
 		return (-1);
 	}
 
