@@ -80,6 +80,7 @@ case '%':
 _putchar('%');
 return (1);
 case 'd':
+return (print_decimal(va_arg(args, int)));
 case 'i':
 return (print_integer(va_arg(args, int)));
 case 'u':

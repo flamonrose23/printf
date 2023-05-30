@@ -11,6 +11,7 @@ int handle_conversion(char specifier, va_list args);
 int _printf(const char *format, ...);
 int print_char(char c);
 int print_integer(int num);
+int print_decimal(int num);
 int print_string(char *str);
 int print_unsigned(unsigned int num);
 int print_unsigned_octal(unsigned int num);
