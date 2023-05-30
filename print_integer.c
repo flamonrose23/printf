@@ -18,6 +18,11 @@ num = -num;
 count++;
 }
 
+if (num <= 9)
+{
+count += _putchar(num + '0');
+}
+
 if (num >= 10)
 {
 count += print_integer(num / 10);
