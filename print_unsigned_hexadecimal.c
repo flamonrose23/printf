@@ -10,19 +10,19 @@
 
 int print_unsigned_hexadecimal(unsigned int num)
 {
-    int count = 0;
-    unsigned int quotient = num / 16;
-    int remainder = num % 16;
+int count = 0;
+unsigned int quotient = num / 16;
+int remainder = num % 16;
 
-    if (quotient != 0)
-        count += print_unsigned_hexadecimal(quotient);
+if (quotient != 0)
+count += print_unsigned_hexadecimal(quotient);
 
-    if (remainder < 10)
-        putchar('0' + remainder);
-    else
-        putchar('a' + (remainder - 10));
+if (remainder < 10)
+_putchar('0' + remainder);
+else
+_putchar('a' + (remainder - 10));
 
-    count++;
+count++;
 
-    return count;
+return (count);
 }
