@@ -10,12 +10,19 @@
 int print_unsigned(unsigned int num)
 {
 int count = 0;
+unsigned int divisor = 1;
+unsigned int n = num;
 
-if (num >= 10)
+while (n / divisor > 9)
+divisor *= 10;
 
-count += print_unsigned(num / 10);
-
-_putchar('0' + num % 10);
+while (divisor != 0)
+{
+_putchar('0' + n / divisor);
 count++;
+n %= divisor;
+divisor /= 10;
+}
+
 return (count);
 }
