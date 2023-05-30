@@ -3,7 +3,7 @@
 /**
  * print_string - Prints a string of characters
  * @str: The string to be printed
- *
+ * Owned by flamonrose23 && lili852
  * Return: Number of characters printed
  */
 int print_string(char *str)

@@ -5,7 +5,7 @@
 /**
  * _printf - Prints formatted output to stdout
  * @format: The format string
- *
+ * Owned by flamonrose23 && lili852
  * Return: The number of characters printed
  */
 int _printf(const char *format, ...)

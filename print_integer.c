@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_integer - prints integers
+ * print_integer - printing integers
  * @num: number to be printed
- *
+ * Owned by flamonrose23 && lili852
  * Return: number of integers printed
  */
 
