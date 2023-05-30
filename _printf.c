@@ -70,27 +70,27 @@ int parse_format(const char *format, va_list args)
  */
 int handle_conversion(char specifier, va_list args)
 {
-	switch (specifier)
-	{
-		case 'c':
-			return (print_char(va_arg(args, int)));
-		case 's':
-			return (print_string(va_arg(args, char *)));
-		case '%':
-			_putchar('%');
-			return (1);
-		case 'd':
-		case 'i':
-			return (print_integer(va_arg(args, int)));
-		case 'u':
-		return (print_unsigned(va_arg(args, unsigned int)));
-		case 'o':
-			return (print_unsigned_octal(va_arg(args, unsigned int)));
-		case 'x':
-			return (print_unsigned_hexadecimal(va_arg(args, unsigned int)));
-		default:
-			_putchar('%');
-			_putchar(specifier);
-			return (2);
-	}
+switch (specifier)
+{
+case 'c':
+return (print_char(va_arg(args, int)));
+case 's':
+return (print_string(va_arg(args, char *)));
+case '%':
+_putchar('%');
+return (1);
+case 'd':
+case 'i':
+return (print_integer(va_arg(args, int)));
+case 'u':
+return (print_unsigned(va_arg(args, unsigned int)));
+case 'o':
+return (print_unsigned_octal(va_arg(args, unsigned int)));
+case 'x':
+return (print_unsigned_hexadecimal(va_arg(args, unsigned int)));
+default:
+_putchar('%');
+_putchar(specifier);
+return (2);
+}
 }
