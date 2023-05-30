@@ -82,10 +82,8 @@ int handle_conversion(char specifier, va_list args)
 		case 'd':
 		case 'i':
 			return (print_integer(va_arg(args, int)));
-		/**
-		 * case 'u':
-		*return (print_unsigned(va_arg(args, unsigned int)));
-		*/
+		case 'u':
+		return (print_unsigned(va_arg(args, unsigned int)));
 		case 'o':
 			return (print_unsigned_octal(va_arg(args, unsigned int)));
 		case 'x':
